@@ -4,8 +4,8 @@ import {
   ConsultationRequestSchema,
   ContactMessageSchema,
   DemoRequestSchema,
-} from '../shared/schemas';
-import type { CloudflareEnv, ProjectShowcase } from '../shared/types';
+} from '../shared/schemas.ts';
+import type { CloudflareEnv, ProjectShowcase } from '../shared/types.ts';
 
 const app = new Hono<{ Bindings: CloudflareEnv }>();
 

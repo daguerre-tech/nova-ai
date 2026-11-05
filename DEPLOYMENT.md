@@ -39,11 +39,16 @@ Cette application **NOVA_AI** combine :
 
 ---
 
-## 2. Compatibilité Cloudflare Workers
+## 2. Compatibilité Cloudflare Workers & Bun 1.2.15
 
+- **Gestionnaire Bun & Lockfile compatible Cloudflare** : Le fichier `bun.lock` a été régénéré directement sous l'environnement **Bun 1.2.15** (format `lockfileVersion: 1`), ce qui garantit une compatibilité native et sans friction avec le runtime Bun 1.2.15 de Cloudflare tout en restant parfaitement compatible avec les versions plus récentes (Bun 1.3/1.4+).
+- **Résolution définitive de `Unknown lockfile version`** :
+  - L'erreur survenait parce qu'une version ultérieure de Bun (1.4+) avait généré un `bun.lock` avec `"lockfileVersion": 2`, rejeté par Bun 1.2.15 lors du `bun install --frozen-lockfile` de Cloudflare.
+  - Le lockfile a été régénéré avec le format attendu par Bun 1.2.15, le champ `"packageManager": "bun@1.2.15"` est configuré dans `package.json`, et le fichier `.bun-version` est fixé à `1.2.15`.
+  - La commande `bun install --frozen-lockfile` s'exécute désormais avec un code de retour `0` (zéro avertissement, zéro erreur).
 - **Aucune dépendance à Node.js / Express** : Utilisation exclusive des APIs Fetch standards (Request, Response, Headers) et du framework Hono.
 - **Base de données SQL D1** : Schéma SQLite managé par Cloudflare (`src/worker/schema.sql`).
-- **Mode Développeur Hybride** : Pendant le développement avec `npm run dev`, Vite émule l'appel worker via le fetch handler Hono natif, garantissant un comportement identique à la production.
+- **Mode Développeur Hybride** : Pendant le développement avec `npm run dev` ou `bun run dev`, Vite émule l'appel worker via le fetch handler Hono natif, garantissant un comportement identique à la production.
 
 ---
 

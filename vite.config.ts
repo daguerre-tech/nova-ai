@@ -2,7 +2,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig, type Plugin } from 'vite';
-import app from './src/worker/index';
+import app from './src/worker/index.ts';
 
 function cloudflareWorkerDevPlugin(): Plugin {
   return {
@@ -70,10 +70,10 @@ export default defineConfig(() => {
     plugins: [react(), tailwindcss(), cloudflareWorkerDevPlugin()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
-        '@client': path.resolve(__dirname, './src/client'),
-        '@worker': path.resolve(__dirname, './src/worker'),
-        '@shared': path.resolve(__dirname, './src/shared'),
+        '@': path.resolve(import.meta.dirname, '.'),
+        '@client': path.resolve(import.meta.dirname, './src/client'),
+        '@worker': path.resolve(import.meta.dirname, './src/worker'),
+        '@shared': path.resolve(import.meta.dirname, './src/shared'),
       },
     },
     server: {
