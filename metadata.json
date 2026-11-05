@@ -1,0 +1,6 @@
+{
+  "name": "NOVA_AI — Today AI Aligns With Bold Dreams",
+  "description": "NOVA_AI dark cinematic landing page with scroll-scrubbed video background, precision AI automation and consulting, powered by Cloudflare Workers and React.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
