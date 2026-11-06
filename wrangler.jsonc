@@ -14,7 +14,13 @@
 
   // Observability & Logs
   "observability": {
-    "enabled": true
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    },
+    "traces": {
+      "enabled": false
+    }
   },
 
   // Cloudflare D1 Database binding
