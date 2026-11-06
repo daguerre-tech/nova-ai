@@ -38,7 +38,7 @@
   // Then replace the database_id below
   "d1_databases": [
     {
-      "binding": "novaai-db",
+      "binding": "DB",
       "database_name": "novaai-d1",
       "database_id": "53465fb4-362d-488a-bdfb-7004a647482c",
       "migrations_table": "d1_migrations",
@@ -50,7 +50,7 @@
   // Create your R2 bucket with: npx wrangler r2 bucket create novaai-storage
   "r2_buckets": [
     {
-      "binding": "novaai-bucket",
+      "binding": "STORAGE",
       "bucket_name": "novaai-r2"
     }
   ],
