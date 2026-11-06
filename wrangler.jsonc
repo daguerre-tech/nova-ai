@@ -22,9 +22,9 @@
   // Then replace the database_id below
   "d1_databases": [
     {
-      "binding": "DB",
+      "binding": "novaai-db",
       "database_name": "novaai-db",
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "a421d19a-4a2f-4290-bff7-0e234ff3f566",
       "migrations_table": "d1_migrations",
       "migrations_dir": "migrations"
     }
