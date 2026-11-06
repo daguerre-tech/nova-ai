@@ -23,8 +23,8 @@
   "d1_databases": [
     {
       "binding": "novaai-db",
-      "database_name": "novaai-db",
-      "database_id": "a421d19a-4a2f-4290-bff7-0e234ff3f566",
+      "database_name": "novaai-d1",
+      "database_id": "53465fb4-362d-488a-bdfb-7004a647482c",
       "migrations_table": "d1_migrations",
       "migrations_dir": "migrations"
     }
@@ -34,8 +34,8 @@
   // Create your R2 bucket with: npx wrangler r2 bucket create novaai-storage
   "r2_buckets": [
     {
-      "binding": "STORAGE",
-      "bucket_name": "novaai-storage"
+      "binding": "novaai-bucket",
+      "bucket_name": "novaai-r2"
     }
   ],
 
